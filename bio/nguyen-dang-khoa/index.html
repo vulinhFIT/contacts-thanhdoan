@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Nguyễn Đăng Khoa - Thành Đoàn TP.HCM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="description"
+        content="Nguyễn Đăng Khoa - Phó Bí thư Thành Đoàn TP. Hồ Chí Minh" />
+  <meta property="og:title" content="Nguyễn Đăng Khoa - Phó Bí thư Thành Đoàn TP.HCM" />
+  <meta property="og:description"
+        content="Phó Bí thư Thành Đoàn TP. Hồ Chí Minh" />
+  <meta property="og:type" content="profile" />
+  <meta property="og:image"
+        content="https://vulinhfit.github.io/contacts-thanhdoan/bio/nguyen-dang-khoa/Nguyen%20Dang%20Khoa.jpg" />
+
+  <style>
+    :root {
+      --primary: #1d79ff;
+      --primary-dark: #1554b8;
+      --bg: #0f172a;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-sub: #6b7280;
+      --radius-xl: 26px;
+      --shadow-strong: 0 20px 45px rgba(15, 23, 42, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: radial-gradient(circle at top, #60a5fa, #0f172a 55%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 16px;
+      color: var(--text-main);
+    }
+
+    .page {
+      width: 100%;
+      max-width: 480px;
+      background: var(--card-bg);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-strong);
+      overflow: hidden;
+    }
+
+    /* ------------ HEADER ------------ */
+
+    .header {
+      position: relative;
+      background: linear-gradient(135deg, #1d79ff, #06b6d4);
+      color: #eff6ff;
+      padding: 22px 20px 70px;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      opacity: 0.9;
+    }
+
+    .top-bar span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .lang-switch {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 6px;
+      border-radius: 999px;
+      border: 1px solid rgba(15, 23, 42, 0.25);
+      background: rgba(15, 23, 42, 0.16);
+      color: #e5e7eb;
+      font-size: 0.7rem;
+      cursor: pointer;
+    }
+
+    .lang-option {
+      padding: 2px 4px;
+      border-radius: 999px;
+      opacity: 0.6;
+      font-weight: 600;
+    }
+
+    .lang-option.active {
+      background: #f9fafb;
+      color: #1f2937;
+      opacity: 1;
+    }
+
+    .cover {
+      margin-top: 16px;
+      height: 80px;
+      border-radius: 18px;
+      background: url("../../assets/icon/THANH DOAN TPHCM - A3.jpg") center/cover no-repeat;
+      opacity: 0.9;
+    }
+
+    .avatar-wrapper {
+      position: absolute;
+      left: 50%;
+      bottom: -42px;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      padding: 4px;
+      background: linear-gradient(135deg, #eff6ff, #bae6fd);
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.5);
+    }
+
+    .avatar {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ------------ BODY ------------ */
+
+    .card-body {
+      padding: 60px 18px 18px;
+      background: linear-gradient(to bottom, #e5f0ff 0, #f9fafb 40%);
+    }
+
+    .name-block {
+      text-align: center;
+      margin-bottom: 14px;
+    }
+
+    .name-block h1 {
+      margin: 0 0 4px;
+      font-size: 1.7rem;
+      letter-spacing: 0.02em;
+    }
+
+    .role {
+      font-size: 0.98rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-sub);
+      margin-bottom: 4px;
+      font-weight: 600;
+    }
+
+    .dept {
+      font-size: 0.9rem;
+      color: #0f172a;
+      margin-bottom: 2px;
+    }
+
+    .org {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #1d4ed8;
+    }
+
+    .info-chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px;
+      margin: 8px 0 2px;
+    }
+
+    .info-chip {
+      font-size: 0.78rem;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid #d1d5db;
+      background: #f9fafb;
+      color: #374151;
+    }
+
+    /* ------------ PRIMARY ACTIONS ------------ */
+
+    .primary-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 16px;
+      margin-bottom: 12px;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 11px 14px;
+      border: none;
+      font-weight: 600;
+      font-size: 0.96rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.08s ease, box-shadow 0.12s ease,
+        background 0.12s ease, filter 0.12s ease;
+      width: 100%;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #eff6ff;
+      box-shadow: 0 10px 22px rgba(37, 99, 235, 0.4);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      background: rgba(255, 255, 255, 0.95);
+      color: #0f172a;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+    }
+
+    .btn-ghost:hover {
+      filter: brightness(0.97);
+      transform: translateY(-1px);
+    }
+
+    .btn-icon {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+    }
+
+    .btn-row {
+      display: flex;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .btn-row .btn {
+      flex: 1;
+    }
+
+    .section-title {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-sub);
+      margin: 16px 4px 6px;
+      font-weight: 600;
+    }
+
+    /* ------------ SOCIAL LIST ------------ */
+
+    .social-list {
+      margin-top: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .social-item {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 8px 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 1px 4px rgba(148, 163, 184, 0.35);
+    }
+
+    .social-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-width: 0;
+    }
+
+    .social-icon-wrap {
+      background: #eff6ff;
+      border-radius: 999px;
+      padding: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .social-icon {
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
+    }
+
+    .social-text {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .social-name {
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: #111827;
+      margin-bottom: 2px;
+    }
+
+    .social-link {
+      font-size: 0.85rem;
+      color: #4b5563;
+      text-decoration: none;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 220px;
+    }
+
+    .social-link:hover {
+      color: #1d4ed8;
+      text-decoration: underline;
+    }
+
+    .social-right a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 6px;
+      background: #eff6ff;
+    }
+
+    .social-open-icon {
+      width: 18px;
+      height: 18px;
+      object-fit: contain;
+    }
+
+    /* ------------ ABOUT ------------ */
+
+    .about {
+      margin-top: 12px;
+      font-size: 0.9rem;
+      line-height: 1.55;
+      color: #4b5563;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 18px;
+      padding: 10px 12px;
+      box-shadow: 0 1px 6px rgba(148, 163, 184, 0.35);
+    }
+
+    /* ------------ FOOTER ------------ */
+
+    .footer {
+      text-align: center;
+      font-size: 0.74rem;
+      color: #9ca3af;
+      padding: 10px 4px 6px;
+    }
+
+    /* ------------ RESPONSIVE ------------ */
+
+    @media (max-width: 480px) {
+      .header {
+        padding: 18px 16px 66px;
+      }
+
+      .card-body {
+        padding: 58px 14px 16px;
+      }
+
+      .social-link {
+        max-width: 170px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- HEADER -->
+    <header class="header">
+      <div class="top-bar">
+        <span data-i18n="copyright">© 2025 Thành Đoàn TP.HCM</span>
+        <span data-i18n="status_secure">Kết nối an toàn</span>
+        <button class="lang-switch" id="lang-switch" aria-label="Đổi ngôn ngữ">
+          <span class="lang-option active" data-lang="vi">VI</span>
+          <span class="lang-option" data-lang="en">EN</span>
+        </button>
+      </div>
+
+      <div class="cover"></div>
+
+      <div class="avatar-wrapper">
+        <!-- Ảnh đại diện -->
+        <img src="Nguyen Dang Khoa.jpg" alt="Ảnh Nguyễn Đăng Khoa" class="avatar" />
+      </div>
+    </header>
+
+    <!-- BODY -->
+    <main class="card-body">
+      <!-- Thông tin cơ bản -->
+      <section class="name-block">
+        <h1>Nguyễn Đăng Khoa</h1>
+        <div class="role" data-i18n="role">Phó Bí thư Thành Đoàn TP.HCM</div>
+        <div class="dept" data-i18n="dept">
+          Thành Đoàn TP. Hồ Chí Minh
+        </div>
+        <div class="org" data-i18n="org">Thành Đoàn TP. Hồ Chí Minh</div>
+
+        <div class="info-chip-row">
+          <div class="info-chip" data-i18n="tag1">Công tác Đoàn Khối</div>
+          <div class="info-chip" data-i18n="tag2">Thanh niên công nhân</div>
+          <div class="info-chip" data-i18n="tag3">Thanh niên đô thị</div>
+        </div>
+      </section>
+
+      <!-- Nút liên hệ chính -->
+      <section class="primary-contact">
+        <a class="btn btn-primary" href="tel:+84906737003">
+          <img
+            src="../../assets/icon/phone-calling.svg"
+            class="btn-icon"
+            alt=""
+          />
+          0906 737 003
+        </a>
+
+        <div class="btn-row">
+          <button class="btn btn-ghost" type="button" data-share>
+            <img
+              src="../../assets/icon/share-product.svg"
+              class="btn-icon"
+              alt=""
+            />
+            <span data-i18n="share_page">Chia sẻ trang</span>
+          </button>
+          <a class="btn btn-ghost" href="nguyendangkhoa.vcf" download>
+            <img
+              src="../../assets/icon/Profile.png"
+              class="btn-icon"
+              alt=""
+            />
+            <span data-i18n="save_contact">Lưu danh bạ</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Mạng xã hội & liên kết -->
+      <h2 class="section-title" data-i18n="social_title">
+        Mạng xã hội & liên kết
+      </h2>
+      <section class="social-list">
+        <!-- ZALO -->
+        <article class="social-item">
+          <div class="social-left">
+            <div class="social-icon-wrap">
+              <img
+                src="../../assets/icon/Zalo.png"
+                alt="Zalo"
+                class="social-icon"
+              />
+            </div>
+            <div class="social-text">
+              <div class="social-name">Zalo</div>
+              <a
+                class="social-link"
+                href="https://zalo.me/0906737003"
+                target="_blank"
+                rel="noopener"
+              >
+                0906 737 003
+              </a>
+            </div>
+          </div>
+          <div class="social-right">
+            <a
+              href="https://zalo.me/0906737003"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                src="../../assets/icon/share-arrow.svg"
+                alt="Mở Zalo"
+                class="social-open-icon"
+              />
+            </a>
+          </div>
+        </article>
+
+        <!-- FACEBOOK -->
+        <article class="social-item">
+          <div class="social-left">
+            <div class="social-icon-wrap">
+              <img
+                src="../../assets/icon/Facebook.png"
+                alt="Facebook"
+                class="social-icon"
+              />
+            </div>
+            <div class="social-text">
+              <div class="social-name">Facebook</div>
+              <a
+                class="social-link"
+                href="https://www.facebook.com/namquocthaibinh"
+                target="_blank"
+                rel="noopener"
+              >
+                facebook.com/namquocthaibinh
+              </a>
+            </div>
+          </div>
+          <div class="social-right">
+            <a
+              href="https://www.facebook.com/namquocthaibinh"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                src="../../assets/icon/share-arrow.svg"
+                alt="Mở Facebook"
+                class="social-open-icon"
+              />
+            </a>
+          </div>
+        </article>
+
+        <!-- WEBSITE ĐƠN VỊ -->
+        <article class="social-item">
+          <div class="social-left">
+            <div class="social-icon-wrap">
+              <img
+                src="../../assets/icon/Website.png"
+                alt="Website"
+                class="social-icon"
+              />
+            </div>
+            <div class="social-text">
+              <div class="social-name" data-i18n="website_title">
+                Website Thành Đoàn
+              </div>
+              <a
+                class="social-link"
+                href="http://www.thanhdoan.hochiminhcity.gov.vn/thanhdoan/webtd"
+                target="_blank"
+                rel="noopener"
+              >
+                thanhdoan.hochiminhcity.gov.vn
+              </a>
+            </div>
+          </div>
+          <div class="social-right">
+            <a
+              href="http://www.thanhdoan.hochiminhcity.gov.vn/thanhdoan/webtd"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                src="../../assets/icon/share-arrow.svg"
+                alt="Mở Website"
+                class="social-open-icon"
+              />
+            </a>
+          </div>
+        </article>
+
+        <!-- EMAIL -->
+        <article class="social-item">
+          <div class="social-left">
+            <div class="social-icon-wrap">
+              <img
+                src="../../assets/icon/Email.png"
+                alt="Email"
+                class="social-icon"
+              />
+            </div>
+            <div class="social-text">
+              <div class="social-name" data-i18n="email_work">
+                Email công việc
+              </div>
+              <a
+                class="social-link"
+                href="mailto:ndkhoa.doankhoi@tphcm.gov.vn"
+              >
+                ndkhoa.doankhoi@tphcm.gov.vn
+              </a>
+            </div>
+          </div>
+          <div class="social-right">
+            <a href="mailto:ndkhoa.doankhoi@tphcm.gov.vn">
+              <img
+                src="../../assets/icon/share-arrow.svg"
+                alt="Gửi email"
+                class="social-open-icon"
+              />
+            </a>
+          </div>
+        </article>
+      </section>
+
+      <!-- Giới thiệu -->
+      <h2 class="section-title" data-i18n="about_title">Giới thiệu ngắn</h2>
+      <section class="about" data-i18n="about_text">
+        Phó Bí thư Thành Đoàn TP. Hồ Chí Minh; phụ trách công tác Đoàn,
+        phong trào Học sinh - Sinh viên Thành phố các chương trình
+        phát huy vai trò xung kích, sáng tạo của thanh niên trong xây dựng
+        thành phố văn minh, hiện đại, nghĩa tình.
+      </section>
+
+      <footer class="footer" data-i18n="footer">
+        Mở trang này bằng cách chạm thẻ NFC hoặc quét mã QR được in trên thẻ
+        danh bạ điện tử.
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    // ----- SHARE BUTTON -----
+    (function () {
+      const shareBtn = document.querySelector("[data-share]");
+      if (!shareBtn) return;
+
+      shareBtn.addEventListener("click", async () => {
+        const url = window.location.href;
+        const title = document.title;
+
+        if (navigator.share) {
+          try {
+            await navigator.share({ title, url });
+          } catch (e) {
+            // user cancelled
+          }
+        } else if (navigator.clipboard) {
+          try {
+            await navigator.clipboard.writeText(url);
+            const original = shareBtn.textContent;
+            shareBtn.textContent = "Đã copy link!";
+            setTimeout(() => {
+              shareBtn.textContent = original;
+            }, 1800);
+          } catch (e) {
+            alert("Hãy copy link trên thanh địa chỉ để chia sẻ.");
+          }
+        } else {
+          alert("Hãy copy link trên thanh địa chỉ để chia sẻ.");
+        }
+      });
+    })();
+
+    // ----- I18N (VI / EN) -----
+    const translations = {
+      vi: {
+        status_secure: "Kết nối an toàn",
+        role: "Phó Bí thư Thành Đoàn",
+        dept: "Thành phố Hồ Chí Minh",
+        org: "Thành Đoàn TP. Hồ Chí Minh",
+        copyright: "© 2025 Thành Đoàn TP.HCM",
+        tag1: "Công tác Đoàn",
+        tag2: "Công tác Hội Sinh viên",
+        tag3: "Đổi mới - Sáng tạo",
+        share_page: "Chia sẻ trang",
+        save_contact: "Lưu danh bạ",
+        social_title: "Mạng xã hội & liên kết",
+        website_title: "Website Thành Đoàn",
+        about_title: "Giới thiệu ngắn",
+        email_work: "Email công việc",
+        about_text:
+          "Phó Bí thư Thành Đoàn TP. Hồ Chí Minh; phụ trách công tác Đoàn Khối, phong trào thanh niên công nhân, thanh niên đô thị và các chương trình phát huy vai trò xung kích, sáng tạo của thanh niên trong xây dựng thành phố văn minh, hiện đại, nghĩa tình.",
+        footer:
+          "Mở trang này bằng cách chạm thẻ NFC hoặc quét mã QR được in trên thẻ danh bạ điện tử."
+      },
+      en: {
+        status_secure: "Secure connection",
+        role: "Deputy Secretary of HCMC Youth Union",
+        dept: "Ho Chi Minh City Youth Union",
+        org: "Ho Chi Minh City Youth Union",
+        copyright: "© 2025 HCM City Youth Union",
+        tag1: "Youth Union work",
+        tag2: "Vietnamese Student Association activities",
+        tag3: "Innovation & creativity",
+        share_page: "Share page",
+        save_contact: "Save contact",
+        social_title: "Social & links",
+        website_title: "Youth Union website",
+        about_title: "Short bio",
+        email_work: "Work email",
+        about_text:
+          "Deputy Secretary of the Ho Chi Minh City Youth Union, in charge of Youth Union work, Vietnamese Student Association activities, movements among young workers and urban youth, promoting their pioneering and creative role in building a modern, civilized and caring city.",
+        footer:
+          "Open this page by tapping the NFC card or scanning the QR code printed on it."
+      }
+    };
+
+    function setLanguage(lang) {
+      document.documentElement.setAttribute("lang", lang);
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const key = el.dataset.i18n;
+        if (translations[lang] && translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+      document.querySelectorAll(".lang-option").forEach((el) => {
+        el.classList.toggle("active", el.dataset.lang === lang);
+      });
+      try {
+        localStorage.setItem("contact_lang", lang);
+      } catch (e) {}
+    }
+
+    (function () {
+      const switcher = document.getElementById("lang-switch");
+      if (!switcher) return;
+
+      switcher.addEventListener("click", () => {
+        const current =
+          document.documentElement.getAttribute("lang") || "vi";
+        setLanguage(current === "vi" ? "en" : "vi");
+      });
+
+      let saved = "vi";
+      try {
+        saved = localStorage.getItem("contact_lang") || "vi";
+      } catch (e) {}
+      setLanguage(saved);
+    })();
+  </script>
+</body>
+</html>
