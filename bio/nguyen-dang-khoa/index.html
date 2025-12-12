@@ -663,7 +663,7 @@
     const translations = {
       vi: {
         status_secure: "Kết nối an toàn",
-        role: "Phó Bí thư Thành Đoàn",
+        role: "Phó Bí thư Thành Đoàn,<br>Chủ tịch Hội Sinh viên",
         dept: "Thành phố Hồ Chí Minh",
         org: "Thành Đoàn TP. Hồ Chí Minh",
         copyright: "© 2025 Thành Đoàn TP.HCM",
@@ -683,8 +683,8 @@
       },
       en: {
         status_secure: "Secure connection",
-        role: "Deputy Secretary of HCMC Youth Union",
-        dept: "Ho Chi Minh City Youth Union",
+        role: "Deputy Secretary of Youth Union,<br>President of the Student Union",
+        dept: "Ho Chi Minh City",
         org: "Ho Chi Minh City Youth Union",
         copyright: "© 2025 HCM City Youth Union",
         tag1: "Youth Union work",
@@ -708,7 +708,8 @@
       document.querySelectorAll("[data-i18n]").forEach((el) => {
         const key = el.dataset.i18n;
         if (translations[lang] && translations[lang][key]) {
-          el.textContent = translations[lang][key];
+          //el.textContent = translations[lang][key];
+            el.innerHTML = translations[lang][key];
         }
       });
       document.querySelectorAll(".lang-option").forEach((el) => {
