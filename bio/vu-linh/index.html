@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Vũ Linh - Thành Đoàn TP.HCM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Màu cho thẻ khi chia sẻ -->
+  <meta property="og:title" content="Vũ Linh - Thành Đoàn TP.HCM">
+  <meta property="og:description" content="Cán bộ - CNTT, Tổ Tài chính - Quản trị - Dự án">
+  <meta property="og:type" content="profile">
+
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-soft: #dbeafe;
+      --bg: #0f172a;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-sub: #6b7280;
+      --radius-lg: 20px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1d4ed8 0, #020617 55%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      color: var(--text-main);
+    }
+
+    .card {
+      max-width: 480px;
+      width: 100%;
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.4);
+      padding: 20px 20px 22px;
+    }
+
+    .header {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .avatar-wrapper {
+      position: relative;
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      padding: 3px;
+      background: conic-gradient(from 180deg, #2563eb, #22c55e, #eab308, #2563eb);
+    }
+
+    .avatar {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      background: linear-gradient(135deg, #1d4ed8, #22c55e);
+      color: #e5e7eb;
+      font-weight: 700;
+      font-size: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .title-block h1 {
+      font-size: 1.6rem;
+      margin: 0 0 4px;
+    }
+
+    .role {
+      font-size: 0.98rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 2px;
+    }
+
+    .dept {
+      font-size: 0.9rem;
+      color: var(--text-sub);
+      margin-bottom: 6px;
+    }
+
+    .org {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #1d4ed8;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .section {
+      border-top: 1px solid #e5e7eb;
+      padding-top: 12px;
+      margin-top: 12px;
+    }
+
+    .section-title {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-sub);
+      margin-bottom: 6px;
+    }
+
+    .info-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    .info-list li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 0;
+    }
+
+    .info-label {
+      font-weight: 600;
+      min-width: 80px;
+      color: var(--text-sub);
+      font-size: 0.86rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 11px 14px;
+      border-radius: 999px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 0.96rem;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.08s ease, box-shadow 0.12s ease, background 0.12s ease;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 8px 18px rgba(37, 99, 235, 0.35);
+    }
+
+    .btn-secondary {
+      background: #f3f4f6;
+      color: #111827;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid #e5e7eb;
+      color: #374151;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 20px rgba(15, 23, 42, 0.18);
+      text-decoration: none;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .tag {
+      font-size: 0.78rem;
+      background: #eff6ff;
+      color: #1d4ed8;
+      padding: 4px 8px;
+      border-radius: 999px;
+    }
+
+    .footer-note {
+      margin-top: 10px;
+      font-size: 0.75rem;
+      color: #9ca3af;
+      text-align: center;
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        padding: 16px 14px 18px;
+        border-radius: 16px;
+      }
+      .header {
+        align-items: flex-start;
+      }
+      .title-block h1 {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <!-- Phần thông tin chính -->
+    <section class="header">
+      <div class="avatar-wrapper">
+        <!-- 
+          THAY avatar.jpg bằng ảnh của anh.
+          - Cách 1: upload file avatar.jpg vào cùng thư mục với index.html
+          - Cách 2: dùng URL ảnh online (Google Drive, web đơn vị...)
+        -->
+        <img class="avatar" src="VL-m2.jpg" alt="Vũ Linh"
+             onerror="this.onerror=null; this.src=''; this.innerHTML='VL';">
+      </div>
+
+      <div class="title-block">
+        <h1>Vũ Linh</h1>
+        <div class="role">Cán bộ</div>
+        <div class="dept">CNTT - Tổ Tài chính - Quản trị - Dự án</div>
+        <div class="org">Thành Đoàn TP.Hồ Chí Minh</div>
+
+        <div class="tags">
+          <div class="tag">Chuyển đổi số</div>
+          <div class="tag">CNTT</div>
+          <div class="tag">Quản trị hệ thống</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Liên hệ -->
+    <section class="section">
+      <div class="section-title">Liên hệ trực tiếp</div>
+      <ul class="info-list">
+        <li>
+          <span class="info-label">Điện thoại</span>
+          <a href="tel:+84987158542">+84 987 158 542</a>
+        </li>
+        <li>
+          <span class="info-label">Email</span>
+          <a href="mailto:vulinhfit@gmail.com">vulinhfit@gmail.com</a>
+        </li>
+        <li>
+          <span class="info-label">Zalo</span>
+          <a href="https://zalo.me/0987158542" target="_blank" rel="noopener">Chat Zalo</a>
+        </li>
+      </ul>
+
+      <div class="btn-group">
+        <!-- vCard: contact.vcf phải nằm trong cùng thư mục -->
+        <a class="btn btn-primary" href="contact.vcf" download>
+          💾 Lưu vào danh bạ (vCard)
+        </a>
+        <a class="btn btn-secondary" href="tel:+84987158542">
+          📞 Gọi điện
+        </a>
+        <a class="btn btn-outline" href="mailto:vulinhfit@gmail.com">
+          ✉️ Gửi email
+        </a>
+      </div>
+    </section>
+
+    <!-- Giới thiệu, dự án, liên kết khác -->
+    <section class="section">
+      <div class="section-title">Giới thiệu ngắn</div>
+      <p style="font-size:0.94rem; line-height:1.5; margin: 0 0 6px;">
+        Cán bộ phụ trách mảng CNTT, tài chính – quản trị và các dự án chuyển đổi số,
+        quan tâm tới việc ứng dụng công nghệ trong quản lý, truyền thông, và hỗ trợ thanh niên.
+      </p>
+
+      <div class="section-title" style="margin-top:10px;">Dự án & liên kết</div>
+      <ul class="info-list">
+        <li>
+          <span class="info-label">Portfolio</span>
+          <a href="https://vulinhfit.github.io" target="_blank" rel="noopener">
+            vulinhfit.github.io
+          </a>
+        </li>
+        <li>
+          <span class="info-label">GitHub</span>
+          <a href="https://github.com/vulinhFIT" target="_blank" rel="noopener">
+            github.com/vulinhFIT
+          </a>
+        </li>
+        <!-- Anh có thể thêm các dòng khác tuỳ ý -->
+      </ul>
+    </section>
+
+    <div class="footer-note">
+      Mở trang này bằng cách chạm thẻ NFC hoặc quét QR code được cấp kèm.
+    </div>
+  </main>
+</body>
+</html>
